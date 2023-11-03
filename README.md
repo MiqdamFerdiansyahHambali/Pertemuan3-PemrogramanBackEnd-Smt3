@@ -18,7 +18,7 @@ git clone https://github.com/maymiquy/PemrogramanBackEnd-3.git
 cd PemrogramanBackEnd-3
 ```
 
-Create a `.env` file similar to [`.env.example`].
+Create a `.env` file similar to `.env.example`.
 
 ```sh
 mv .env.example

@@ -21,8 +21,8 @@ class StudentController extends Controller
             ];
             return response()->json($response, 200);
         } else {
-            $response = ['massage' => 'Tidak ada data'];
-            return response()->json($response, 200);
+            $error = ['massage' => 'Tidak ada data'];
+            return response()->json($error, 404);
         }
     }
 
@@ -54,7 +54,20 @@ class StudentController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $student = Student::find($id);
+
+        if (!$student) {
+            $error = ['message' => 'Data student tidak ditemukan'];
+
+            return response()->json($error, 404);
+        } else {
+            $response = [
+                'message' => 'Menampilkan data student',
+                'data' => $student,
+            ];
+
+            return response()->json($response, 200);
+        }
     }
 
     /**
@@ -74,9 +87,17 @@ class StudentController extends Controller
 
         if (!$student) {
             $error = ['message' => 'Data student tidak ditemukan'];
+
             return response()->json($error, 404);
         } else {
-            $student->update($request->all());
+            $input = [
+                'nama' => $request->nama ?? $student->nama,
+                'nim' => $request->nim ?? $student->nim,
+                'email' => $request->email ?? $student->email,
+                'jurusan' => $request->jurusan ?? $student->jurusan,
+            ];
+
+            $student->update($input);
 
             $response = [
                 'message' => 'Data student Berhasil Diubah',

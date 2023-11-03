@@ -14,7 +14,7 @@ This repo implement Back-End REST-API for task my activity college at STT Terpad
 ## Running Locally
 
 ```sh
-git clone https://github.com/maymiquy/PemrogramanBackEnd.git
+git clone https://github.com/maymiquy/PemrogramanBackEnd-3.git
 cd portfolio
 ```
 

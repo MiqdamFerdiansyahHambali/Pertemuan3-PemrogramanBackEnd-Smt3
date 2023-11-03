@@ -24,7 +24,7 @@ Create a `.env` file similar to `.env.example`.
 mv .env.example
 ```
 
-Add enviroment variable into `.env``
+Add enviroment variable into `.env`
 
 ```sh
 # Add and running a local data base to get a migration.

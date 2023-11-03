@@ -15,7 +15,7 @@ This repo implement Back-End REST-API for task my activity college at STT Terpad
 
 ```sh
 git clone https://github.com/maymiquy/PemrogramanBackEnd-3.git
-cd portfolio
+cd PemrogramanBackEnd-3
 ```
 
 Create a `.env` file similar to [`.env.example`].

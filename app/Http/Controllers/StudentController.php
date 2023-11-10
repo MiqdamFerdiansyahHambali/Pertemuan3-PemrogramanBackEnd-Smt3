@@ -39,7 +39,14 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        $student = Student::create($request->all());
+        $validateData = $request->validate([
+            'nama' => 'required|max:30',
+            'nim' => 'required|numeric',
+            'email' => 'required|max:24',
+            'jurusan' => 'required|max:30',
+        ]);
+
+        $student = Student::create($validateData);
 
         $response = [
             'message' => 'Data Student Berhasil Dibuat',
@@ -90,11 +97,18 @@ class StudentController extends Controller
 
             return response()->json($error, 404);
         } else {
+            $validateData = $request->validate([
+                'nama' => 'required|max:30',
+                'nim' => 'required|numeric',
+                'email' => 'required|email|max:24',
+                'jurusan' => 'required|max:30',
+            ]);
+
             $input = [
-                'nama' => $request->nama ?? $student->nama,
-                'nim' => $request->nim ?? $student->nim,
-                'email' => $request->email ?? $student->email,
-                'jurusan' => $request->jurusan ?? $student->jurusan,
+                'nama' => $validateData['nama'] ?? $student->nama,
+                'nim' => $validateData['nim'] ?? $student->nim,
+                'email' => $validateData['email'] ?? $student->email,
+                'jurusan' => $validateData['jurusan'] ?? $student->jurusan,
             ];
 
             $student->update($input);

@@ -9,13 +9,13 @@
 </p>
 
 ## Note
-This repo implement Back-End REST-API for task my activity college at STT Terpadu Nurul Fikri. u can review and assesment a task via branch on this repo.
+This repo implement Back-End REST-API for task my activity college at STT Terpadu Nurul Fikri. For review and assesment a task via branch on this repo.
 
 ## Running Locally
 
 ```sh
-git clone https://github.com/maymiquy/PemrogramanBackEnd-3.git
-cd PemrogramanBackEnd-3
+git clone https://github.com/maymiquy/backend-2023.git
+cd backend-2023
 ```
 
 Create a `.env` file similar to `.env.example`.
